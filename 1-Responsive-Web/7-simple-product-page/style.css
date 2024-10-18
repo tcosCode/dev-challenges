@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  margin: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  justify-content: center;
+  align-items: center;
+}
+
+figure img {
+  border-radius: 5px;
+  height: auto;
+}
+
+.breadcrumbs {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+}
+
+.breadcrumbs span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9da3ae;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.text > h1 {
+  margin-bottom: 1.5rem;
+  text-wrap: pretty;
+}
+
+.text > p {
+  margin-bottom: 2.5rem;
+}
+
+h3 {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+ul li {
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+
+.features {
+  display: flex;
+  margin-block: 2.5rem;
+  background-color: #f3f4f6;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  max-width: 20rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.color,
+.size {
+  text-align: center;
+  p {
+    font-weight: 600;
+  }
+}
+
+h4 {
+  color: #9da3ae;
+  font-size: 0.75rem;
+  margin-bottom: 0.3rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 8px 32px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.cart {
+  background-color: #845eee;
+  color: white;
+}
+
+.wishlist {
+  background-color: white;
+  border: 2px solid #d2d5da;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+strong {
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .container {
+    flex-direction: row;
+  }
+}

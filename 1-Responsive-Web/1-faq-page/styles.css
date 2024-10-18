@@ -1,0 +1,98 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  --link-color: #4e80ee;
+  --font-color: #030616;
+  --background-color-dark: #d2d5da;
+  --background-color-light: #f8fafc;
+  --white-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* Add some styles for body*/
+body {
+  color: var(--font-color);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color-light);
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--link-color);
+}
+
+span {
+  font-weight: 600;
+}
+
+hr {
+  width: 640px;
+  height: 1px;
+  border: none;
+  margin-block: 2.5rem;
+  background-color: var(--background-color-dark);
+}
+
+.header {
+  background-color: var(--white-color);
+  text-align: center;
+  padding: 4.5rem 1.5rem;
+}
+
+.container {
+  padding: 4.5rem 1.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+h2 + p {
+  margin-bottom: 1.5rem;
+}
+
+ul {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section {
+    width: 640px;
+  }
+}
