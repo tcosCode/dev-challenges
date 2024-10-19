@@ -3,8 +3,107 @@
   padding: 0;
   box-sizing: border-box;
   font-size: 16px;
+  color: #6c727f;
+  font-weight: 400;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+  max-width: 612px;
+}
+
+header img {
+  width: 32px;
+  height: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  margin-block: 1rem;
+}
+
+.grid {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 1.5rem;
+  border-radius: 20px;
+  display: grid;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  box-shadow: 0 3px 2px 2px #d9d9da;
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  padding: 2rem;
+  gap: 1rem;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img {
+  max-width: 275px;
+  height: auto;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card:nth-child(1),
+  .card:nth-child(2) {
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+  }
+
+  .card:nth-child(n + 3) {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .card:nth-child(1),
+  .card:nth-child(2),
+  .card:nth-child(3) {
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    grid-column: span 2;
+  }
+  .card:nth-child(n + 4) {
+    grid-column: span 3;
+  }
 }
