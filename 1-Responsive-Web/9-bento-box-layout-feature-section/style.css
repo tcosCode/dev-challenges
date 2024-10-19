@@ -9,6 +9,13 @@
 
 body {
   font-family: "Be Vietnam Pro", sans-serif;
+  text-align: center;
+}
+
+main {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .container {
