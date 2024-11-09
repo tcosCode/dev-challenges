@@ -25,13 +25,22 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: #444;
+}
+
+h4 {
+  color: #4c7a99;
 }
 
 ol {
   list-style-type: decimal-leading-zero;
   margin-left: 40px;
+}
+
+ol ::marker {
+  color: #4c7a99;
+  font-weight: bold;
 }
 
 li {
