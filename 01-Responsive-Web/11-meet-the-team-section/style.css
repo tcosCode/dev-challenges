@@ -53,6 +53,19 @@ h1 {
   width: 284px;
   height: 288px;
   position: relative;
+  overflow: clip;
+}
+
+.card img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover > :first-child {
+  transform: scale(1.2);
 }
 
 .card-1 {
@@ -97,6 +110,10 @@ h1 {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
+}
+
+.note:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {
