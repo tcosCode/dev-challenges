@@ -174,7 +174,8 @@ img {
   color: #ffffff;
   border-radius: 0 0 10px 10px;
 }
-.popular-footer .free-price {
+
+.free-price {
   grid-area: free-price;
 }
 
