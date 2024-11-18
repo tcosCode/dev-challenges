@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  text-wrap: pretty;
+}
+
+body {
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #121826;
+  line-height: 1.5;
+}
+
+header {
+  width: 100vw;
+  background-color: #f8fafc;
+  background-image: url(./images/bg-pattern.png);
+  background-repeat: no-repeat;
+  margin-bottom: 60px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header div {
+  margin: 0 auto;
+  padding-block: 52px;
+  max-width: 500px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  grid-template-areas:
+    ".        enterprise-price  popular-price"
+    "features enterprise        popular"
+    ".        enterprise-footer popular-footer";
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+}
+
+.price p {
+  color: #4d5562;
+  padding-bottom: 3rem;
+}
+
+.footer {
+  color: #3662e3;
+  padding-block: 1.5rem;
+}
+
+.footer p {
+  display: inline-block;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+
+.footer img {
+  vertical-align: middle;
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer:hover {
+  cursor: pointer;
+}
+
+.footer:hover img {
+  transform: translateX(5px);
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3662e3;
+  padding: 1.5rem 0 0.75rem 0;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 4rem;
+  padding-bottom: 6px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.features {
+  grid-area: features;
+  text-align: left;
+  background-color: #f8fafc;
+  border-radius: 10px 0 0 10px;
+  overflow: clip;
+}
+
+.features li {
+  padding-left: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap; /* No permite saltos de línea */
+  overflow: hidden; /* Oculta el desbordamiento del contenido */
+  text-overflow: ellipsis; /* Agrega los puntos suspensivos */
+}
+
+li {
+  padding-block: 1rem;
+  border-bottom: 1px solid #4d556213;
+}
+
+img {
+  width: auto;
+  height: 15px;
+}
+
+.enterprise-price {
+  grid-area: enterprise-price;
+}
+
+.enterprise {
+  grid-area: enterprise;
+}
+
+.enterprise-footer {
+  grid-area: enterprise-footer;
+}
+
+.popular-price {
+  grid-area: popular-price;
+  background-color: #121826;
+  color: #ffffff;
+  border-radius: 10px 10px 0 0;
+}
+
+.popular-price h3 {
+  margin: 0 auto;
+  color: #ffffff;
+  background-color: #3662e3;
+  border-radius: 20px;
+  width: fit-content;
+  height: fit-content;
+  padding: 1px 10px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.popular-price p {
+  color: #ffffff;
+}
+
+.popular {
+  grid-area: popular;
+  background-color: #121826;
+  color: #ffffff;
+}
+
+.popular-footer {
+  grid-area: popular-footer;
+  background-color: #e9a23b;
+  color: #ffffff;
+  border-radius: 0 0 10px 10px;
+}
+.popular-footer .free-price {
+  grid-area: free-price;
+}
+
+.free {
+  grid-area: free;
+}
+
+.free-footer {
+  grid-area: free-footer;
+}
+
+.team-price {
+  grid-area: team-price;
+}
+
+.team {
+  grid-area: team;
+}
+
+.team-footer {
+  grid-area: team-footer;
+}
+
+.free-price,
+.free,
+.free-footer,
+.team-price,
+.team,
+.team-footer {
+  display: none;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    grid-template-areas:
+      ".        team-price  popular-price    enterprise-price"
+      "features team        popular          enterprise"
+      ".        team-footer popular-footer  enterprise-footer";
+    padding-inline: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .team-price,
+  .team,
+  .team-footer {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+    grid-template-areas:
+      ".          free-price    team-price   popular-price    enterprise-price"
+      "features   free          team         popular          enterprise"
+      ".          free-footer   team-footer  popular-footer   enterprise-footer";
+    padding-inline: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .free-price,
+  .free,
+  .free-footer {
+    display: block;
+  }
+}
