@@ -31,4 +31,12 @@ body.dark-mode {
   nav ul li a:hover {
     color: white;
   }
+
+  .menu-hamburguer {
+    background-color: #000000;
+  }
+
+  .menu-hamburguer a:hover {
+    color: white;
+  }
 }

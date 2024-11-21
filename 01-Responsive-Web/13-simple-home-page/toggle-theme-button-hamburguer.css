@@ -1,0 +1,64 @@
+.toggle-theme-hamburguer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 4rem;
+}
+
+.moon path {
+  fill: white;
+  transition: 0.4s;
+}
+
+.sun {
+  z-index: 1;
+}
+
+.sun circle,
+.sun path {
+  fill: #223344;
+  stroke: #223344;
+  transition: 0.4s;
+}
+
+.button-theme {
+  display: flex;
+  align-items: center;
+  width: 38px;
+  height: 19px;
+  background-color: #223344;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.button-theme::before {
+  position: absolute;
+  content: "";
+  background-color: white;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin: 2px;
+  transition: 0.4s;
+  right: 0;
+}
+
+#toggle-checkbox-hamburguer {
+  display: none;
+}
+
+#toggle-checkbox-hamburguer:checked + .button-theme::before {
+  transform: translateX(-17px);
+}
+
+#toggle-checkbox-hamburguer:checked + .button-theme .moon path {
+  fill: #223344;
+}
+
+#toggle-checkbox-hamburguer:checked + .button-theme .sun path,
+#toggle-checkbox-hamburguer:checked + .button-theme .sun circle {
+  fill: white;
+  stroke: white;
+}
