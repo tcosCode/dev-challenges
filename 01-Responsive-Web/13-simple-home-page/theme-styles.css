@@ -1,0 +1,34 @@
+body {
+  color-scheme: light dark;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+
+  .title h1 {
+    color: white;
+  }
+
+  .title h5 {
+    color: white;
+  }
+
+  h4 {
+    color: #677489;
+  }
+
+  .done p {
+    color: #677489;
+  }
+
+  nav ul li a:hover {
+    color: white;
+  }
+}

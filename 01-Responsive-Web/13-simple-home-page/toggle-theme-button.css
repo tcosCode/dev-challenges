@@ -1,0 +1,69 @@
+@media (min-width: 768px) {
+  #toggle-theme {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .moon {
+    z-index: 1;
+  }
+
+  .moon path {
+    fill: white;
+    transition: 0.4s;
+  }
+
+  .sun {
+    z-index: 1;
+  }
+
+  .sun circle,
+  .sun path {
+    fill: #223344;
+    stroke: #223344;
+    transition: 0.4s;
+  }
+
+  .button-theme {
+    display: flex;
+    align-items: center;
+    width: 38px;
+    height: 19px;
+    background-color: #223344;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .button-theme::before {
+    position: absolute;
+    content: "";
+    background-color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 2px;
+    transition: 0.4s;
+    right: 0;
+  }
+
+  #toggle-checkbox {
+    display: none;
+  }
+
+  #toggle-checkbox:checked + .button-theme::before {
+    transform: translateX(-17px);
+  }
+
+  #toggle-checkbox:checked + .button-theme .moon path {
+    fill: #223344;
+  }
+
+  #toggle-checkbox:checked + .button-theme .sun path,
+  #toggle-checkbox:checked + .button-theme .sun circle {
+    fill: white;
+    stroke: white;
+  }
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Simple Home Page</title>
+  </head>
+  <body class="light-mode">
+    <div id="menu-hamburguer" class="menu-hamburguer">
+      <img id="close" src="./images/close-button.svg" alt="close" />
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Resource</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="toggle-theme-hamburguer"></div>
+    </div>
+    <header>
+      <img class="logo" src="./images/logo.svg" alt="logo" />
+      <nav>
+        <ul>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">Resource</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="toggle-theme" id="toggle-theme">
+        <input type="checkbox" name="toggle-checkbox" id="toggle-checkbox" />
+        <label for="toggle-checkbox" class="button-theme">
+          <svg
+            width="20.5"
+            height="15"
+            class="moon"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M15 4C15.292 4 15.438 4 15.5781 4.04183C16.192 4.22522 16.4775 4.93111 16.1637 5.48976C16.0921 5.61719 15.8744 5.82779 15.4389 6.249C13.935 7.70352 13 9.74257 13 12C13 14.2574 13.935 16.2965 15.4389 17.751C15.8744 18.1722 16.0921 18.3828 16.1637 18.5102C16.4775 19.0689 16.192 19.7748 15.5781 19.9582C15.438 20 15.292 20 15 20V20C10.5817 20 7 16.4183 7 12C7 7.58172 10.5817 4 15 4V4Z"
+              fill="#223344"
+            />
+          </svg>
+
+          <svg
+            width="16"
+            height="21"
+            class="sun"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <circle cx="12" cy="12" r="4" fill="#223344" />
+            <path
+              d="M12 5V3"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M12 21V19"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M16.95 7.04996L18.3643 5.63574"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M5.63608 18.3644L7.05029 16.9502"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M19 12L21 12"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M3 12L5 12"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M16.95 16.95L18.3643 18.3643"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M5.63608 5.63559L7.05029 7.0498"
+              stroke="#223344"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </label>
+      </div>
+      <img
+        id="hamburguer"
+        class="hamburguer"
+        src="./images/hamburger-button.svg"
+        alt="hamburguer"
+      />
+    </header>
+    <main>
+      <section class="hero-image">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="./images/hero-image-simple-homepage@2x.png"
+          />
+          <source
+            media="(min-width: 769px)"
+            srcset="./images/hero-image-simple-homepage.png"
+          />
+          <img src="./images/hero-image-simple-homepage.png" alt="hero-image" />
+        </picture>
+      </section>
+      <section class="hero">
+        <div class="title">
+          <h5><span>😎</span>Simple way to communicate</h5>
+          <h1>Actions for Accessibility in Design</h1>
+          <h4>
+            The fastest way to build and deploy websites with reusable
+            components.
+          </h4>
+        </div>
+        <div class="buttons">
+          <button>GET STARTED</button>
+          <button>Get live demo</button>
+        </div>
+        <div class="features">
+          <div class="done">
+            <img src="./images/Done_ring_round_fill.svg" alt="done" />
+            <p>No credit card required</p>
+          </div>
+          <div class="done">
+            <img src="./images/Done_ring_round_fill.svg" alt="done" />
+            <p>No software to install</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+    <script src="./script-toggle-theme.js"></script>
+  </body>
+</html>
