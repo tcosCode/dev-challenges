@@ -232,6 +232,11 @@ main {
 }
 
 @media (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
   .hero {
     flex-direction: row-reverse;
     align-items: center;
