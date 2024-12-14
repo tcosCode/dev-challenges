@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  text-wrap: pretty;
+}
+
+body {
+  font-family: "Be Vietnam Pro", serif;
+  font-weight: 400;
+  color: #121826;
+  line-height: 1.5;
+}
+
+.purple {
+  color: #4138c2;
+}
+
+.green {
+  color: #5ec269;
+}
+
+.red {
+  color: #e14f62;
+}
+
+.yellow {
+  color: #e2b53e;
+}
+
+.orange {
+  color: #e87b35;
+}
+
+.blue {
+  color: #4e80ee;
+}
+
+.violet {
+  color: #9d59ef;
+}
+
+.green-pie {
+  color: #52b3d0;
+}
+
+.container {
+  max-width: 1200px;
+  margin-inline: 4.5rem;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 1.5rem;
+}
+
+.transparent-button {
+  color: #4138c2;
+  background-color: #fff;
+  font-weight: 700;
+  border: 2px solid #e5e7eb;
+  border-radius: 2rem;
+  padding: 0.75rem 2.25rem;
+}
+
+.transparent-button:hover {
+  background-color: #c9d2fa;
+  border: 2px solid #c9d2fa;
+  cursor: pointer;
+}
+
+main {
+  margin-block: 0 4.5rem;
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-block: 2rem;
+  margin-bottom: 2.25rem;
+}
+
+.hero-image {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.hero-text h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.hero-text p {
+  color: #4d5562;
+  margin-block: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.purple-button {
+  background-color: #4138c2;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.75rem 2.25rem;
+  border-radius: 2rem;
+  border: none;
+}
+
+.purple-button:hover {
+  background-color: #2f2a8e;
+  cursor: pointer;
+}
+
+.features {
+  padding-block: 4.5rem;
+  text-align: center;
+}
+
+.features h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.card div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  width: 72px;
+  height: 72px;
+  border-radius: 1rem;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+}
+
+.card p {
+  font-weight: 700;
+}
+
+.card-purple {
+  background-color: #c9d2fa;
+}
+
+.card-green {
+  background-color: #e2fbe8;
+}
+
+.card-red {
+  background-color: #fbe5e6;
+}
+
+.card-yellow {
+  background-color: #fdf9c9;
+}
+
+.card-orange {
+  background-color: #fceed8;
+}
+
+.card-blue {
+  background-color: #dee9fc;
+}
+
+.card-violet {
+  background-color: #f1e8fd;
+}
+
+.card-green-pie {
+  background-color: #d5faf1;
+}
+
+.pre-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./images/footer_background_image@2x.png");
+  width: 100%;
+  height: 580px;
+  background-size: cover;
+  text-align: center;
+}
+
+.pre-footer h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  max-width: 400px;
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  background-color: #121826;
+  color: #9da3ae;
+  padding-block: 1.5rem;
+  text-align: center;
+}
+
+.footer span {
+  margin-right: 2rem;
+}
+
+.footer :nth-child(2) {
+  font-weight: 700;
+}
+
+.footer :nth-child(3) {
+  font-weight: 700;
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+  }
+}
