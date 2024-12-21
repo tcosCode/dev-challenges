@@ -116,6 +116,28 @@ h1 {
   cursor: pointer;
 }
 
+@media (max-width: 640px) {
+  .container {
+    max-width: 80%;
+    padding-bottom: 15rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card, header {
+    width: 100%;
+    grid-column: auto;
+  }
+
+  .card :nth-child(2) {
+    width: 100%;
+  }
+
+  
+}
+
 @media (min-width: 1024px) {
   .container {
     width: 852px;

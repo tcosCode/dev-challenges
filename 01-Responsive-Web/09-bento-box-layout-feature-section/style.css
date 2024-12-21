@@ -80,6 +80,13 @@ h3 {
   margin-bottom: 0.75rem;
 }
 
+@media (max-width: 640px) {
+  .card {
+    flex-direction: column;
+    width: auto;
+  }
+}
+
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: 1fr 1fr;
