@@ -1,98 +1,121 @@
-/* Reset some default styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
+:root {
+  /* Design variables */
+  --link-color: #4e80ee;
+  --font-color: #030616;
+  --bg-dark: #d2d5da;
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+
+  /* Typographic variables */
+  --font-family: "Inter", sans-serif;
+  --base-size: 1rem;
+  --h1-size: clamp(1.75rem, 5vw, 2.25rem);
+  --h2-size: clamp(1.25rem, 3vw, 1.5rem);
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 4.5rem;
+  --max-width: 40rem; /* 640px */
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-* {
-  box-sizing: border-box;
-  --link-color: #4e80ee;
-  --font-color: #030616;
-  --background-color-dark: #d2d5da;
-  --background-color-light: #f8fafc;
-  --white-color: #ffffff;
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-}
-
-/* Add some styles for body*/
+/* Base styles */
 body {
-  color: var(--font-color);
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: var(--base-size);
   line-height: 1.5;
+  color: var(--font-color);
+  background-color: var(--bg-light);
   display: flex;
   flex-direction: column;
-  background-color: var(--background-color-light);
 }
 
-h1 {
-  font-size: 2.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
+/* Links */
 a {
+  text-decoration: none;
   color: var(--link-color);
+  transition: opacity 0.2s ease;
 }
 
+a:hover {
+  opacity: 0.8;
+}
+
+/* Tipography */
+h1 {
+  font-size: var(--h1-size);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--h2-size);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.3;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h2 + p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Semántics Elements */
+strong,
 span {
   font-weight: 600;
 }
 
 hr {
-  width: 640px;
+  max-width: var(--max-width);
+  width: 100%;
   height: 1px;
   border: none;
-  margin-block: 2.5rem;
-  background-color: var(--background-color-dark);
+  margin-block: var(--spacing-xl);
+  background-color: var(--bg-dark);
 }
 
+/* Components */
 .header {
-  background-color: var(--white-color);
+  background-color: var(--white);
   text-align: center;
-  padding: 4.5rem 1.5rem;
+  padding: var(--spacing-2xl) var(--spacing-md);
 }
 
 .container {
-  padding: 4.5rem 1.5rem;
+  padding: var(--spacing-2xl) var(--spacing-md);
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
+ul,
+ol {
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-xl);
 }
 
-h2 + p {
-  margin-bottom: 1.5rem;
-}
-
-ul {
-  margin-bottom: 1.5rem;
-}
-
-@media (min-width: 640px) {
+/* Media queries */
+@media (min-width: 40em  /* 640px */) {
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
   section {
-    width: 640px;
+    max-width: var(--max-width);
   }
 }

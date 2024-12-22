@@ -1,79 +1,105 @@
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
-  color: #374151;
 }
 
+:root {
+  --primary-color: #6b59d0;
+  --text-color: #374151;
+  --text-secondary: #6b7280;
+  --border-color: #deddeb;
+  --base-font-size: clamp(14px, 1vw + 12px, 16px);
+  --container-max-width: 800px;
+  --section-spacing: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Base styles */
 body {
   font-family: "Red Hat Display", sans-serif;
+  font-size: var(--base-font-size);
+  color: var(--text-color);
 }
 
-header img {
-  width: 100%;
-  height: 191px;
-  object-fit: cover;
-  overflow: hidden;
-  object-position: left;
-}
-
+/* Layout */
 .container {
-  margin: 30px 1.25rem;
+  margin: clamp(1.25rem, 5vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2vw, 2rem);
+}
 
-  @media (min-width: 768px) {
-    margin: 30px 10%;
+@media (min-width: 768px) {
+  .container {
+    margin: 0 auto;
   }
 }
 
+/* Header */
+header img {
+  width: 100%;
+  height: clamp(150px, 25vw, 191px);
+  object-fit: cover;
+  object-position: left;
+}
+
+/* Hero section */
 .hero {
-  max-width: 800px;
+  max-width: var(--container-max-width);
+}
+
+/* Typography */
+h1 {
+  font-size: clamp(2rem, 1.6522rem + 1.7391vw, 3rem);
+  margin-bottom: clamp(40px, 8vw, 80px);
 }
 
 h2 {
-  color: #6b59d0;
-  font-size: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-h1 {
-  font-size: 3rem;
-  font-size: clamp(2rem, 1.6522rem + 1.7391vw, 3rem);
-  margin-bottom: 80px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-
-.card {
-  padding: 2rem;
-  border-left: 1px dashed #deddeb;
-}
-
-.card img {
-  width: 52px;
-  height: 52px;
-  margin-block: 2rem;
+  color: var(--primary-color);
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+  margin-bottom: clamp(1rem, 2vw, 1.25rem);
 }
 
 h3 {
-  font-weight: 1.125rem;
-  margin-bottom: 0.25rem;
+  font-size: clamp(1rem, 1vw + 0.875rem, 1.125rem);
+  margin-bottom: clamp(0.25rem, 1vw, 0.5rem);
+  position: relative;
 }
 
 h3::before {
   content: "|";
-  position: relative;
-  left: -35px;
-  color: #6b59d0;
+  position: absolute;
+  left: clamp(-25px, -3vw, -35px);
+  color: var(--primary-color);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Card components */
+.card {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-left: 1px dashed var(--border-color);
+}
+
+.card img {
+  width: clamp(40px, 5vw, 52px);
+  height: clamp(40px, 5vw, 52px);
+  margin-block: clamp(1.5rem, 3vw, 2rem);
 }
 
 .card p {
-  color: #6b7280;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: clamp(0.875rem, 1vw + 0.75rem, 1rem);
 }
 
+/* Utility classes */
 span {
-  color: #6b59d0;
+  color: var(--primary-color);
 }

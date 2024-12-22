@@ -1,150 +1,183 @@
+:root {
+  /* Colors */
+  --color-text: #394150;
+  --color-accent: #263fa9;
+  --color-background: #f3f4f6;
+  --color-white: #ffffff;
+
+  /* Card Colors */
+  --card-1: #c1b6f8;
+  --card-2: #edacd2;
+  --card-3: #9dc4f8;
+  --card-4: #f8d8b0;
+  --card-5: #86e7d4;
+
+  /* Typography */
+  --font-primary: "Outfit", sans-serif;
+  --font-size-base: 16px;
+  --font-size-h1: clamp(2rem, 4vw, 2.5rem);
+  --font-size-card: clamp(1.125rem, 2vw, 1.25rem);
+
+  /* Spacing */
+  --space-sm: 1.25rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: clamp(3rem, 6vw, 4.5rem);
+
+  /* Layout */
+  --container-sm: 568px;
+  --container-md: 852px;
+  --container-lg: 1112px;
+  --card-size: clamp(240px, 30vw, 284px);
+  --border-radius: 2rem;
+
+  /* Transitions */
+  --transition-normal: 0.3s ease-in-out;
+}
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base styles */
 html {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   text-wrap: pretty;
 }
 
 body {
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-primary);
   font-weight: 400;
   font-style: normal;
-  color: #394150;
+  color: var(--color-text);
   line-height: 1.5;
 }
+
+/* Container */
 .container {
   position: relative;
-  width: 568px;
-  height: auto;
-  margin: 72px auto;
-  border-radius: 2rem;
-  background-color: #f3f4f6;
+  width: min(var(--container-sm), 90%);
+  margin: var(--space-xl) auto;
+  border-radius: var(--border-radius);
+  background-color: var(--color-background);
   background-repeat: no-repeat;
   background-image: url("./images/Background_decor.svg");
   overflow: clip;
 }
 
+/* Header */
 header {
-  padding: 2rem;
+  padding: var(--space-lg);
   grid-column: span 2;
 }
 
 header :nth-child(1) {
-  color: #263fa9;
+  color: var(--color-accent);
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-h1);
   font-weight: 500;
 }
 
+/* Grid Layout */
 .grid {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: end;
+  gap: 0;
 }
 
+/* Cards */
 .card {
-  width: 284px;
-  height: 288px;
+  width: 100%;
+  aspect-ratio: 1;
   position: relative;
   overflow: clip;
 }
 
 .card img {
-  transition: transform 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition-normal);
 }
 
 .card:hover {
   cursor: pointer;
 }
 
-.card:hover > :first-child {
+.card:hover > img {
   transform: scale(1.2);
 }
 
+/* Card colors */
 .card-1 {
-  background-color: #c1b6f8;
+  background-color: var(--card-1);
 }
-
 .card-2 {
-  background-color: #edacd2;
+  background-color: var(--card-2);
 }
-
 .card-3 {
-  background-color: #9dc4f8;
+  background-color: var(--card-3);
 }
-
 .card-4 {
-  background-color: #f8d8b0;
+  background-color: var(--card-4);
 }
-
 .card-5 {
-  background-color: #86e7d4;
+  background-color: var(--card-5);
   grid-column-end: 3;
 }
 
+/* Card content */
 .name {
   position: absolute;
-  bottom: 1.25rem;
-  left: 1.5rem;
-  color: white;
+  bottom: var(--space-sm);
+  left: var(--space-md);
+  color: var(--color-white);
 }
 
 .name :nth-child(1) {
-  font-size: 1.25rem;
+  font-size: var(--font-size-card);
   font-weight: 600;
-}
-
-.card img {
-  position: absolute;
-  bottom: 0;
 }
 
 .note {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-}
-
-.note:hover {
+  bottom: var(--space-lg);
+  left: var(--space-lg);
   cursor: pointer;
 }
 
-@media (max-width: 640px) {
+/* Responsive layouts */
+@media (max-width: 430px) {
   .container {
-    max-width: 80%;
-    padding-bottom: 15rem;
+    padding-bottom: 11rem;
   }
 
   .grid {
     grid-template-columns: 1fr;
   }
 
-  .card, header {
+  .card,
+  header {
     width: 100%;
     grid-column: auto;
   }
-
-  .card :nth-child(2) {
-    width: 100%;
-  }
-
-  
 }
 
 @media (min-width: 1024px) {
   .container {
-    width: 852px;
+    width: min(var(--container-md), 90%);
   }
 
   .grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   header {
@@ -157,18 +190,18 @@ h1 {
   }
 
   .card-5 {
-    grid-row-start: 3;
-    grid-column-end: 4;
+    grid-row: 3;
+    grid-column: 3;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    width: 1112px;
+    width: min(var(--container-lg), 90%);
   }
 
   .grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 
   header {
@@ -180,12 +213,12 @@ h1 {
   }
 
   .card-4 {
-    grid-row-start: 2;
-    grid-column-end: 4;
+    grid-row: 2;
+    grid-column: 3;
   }
 
   .card-5 {
-    grid-row-start: 2;
-    grid-column-end: 5;
+    grid-row: 2;
+    grid-column: 4;
   }
 }

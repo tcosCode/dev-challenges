@@ -1,85 +1,110 @@
+:root {
+  --color-text: #6c727f;
+  --color-heading: #000;
+  --color-background: #f3f4f6;
+  --color-shadow: #d9d9da;
+  --font-base: "Be Vietnam Pro", sans-serif;
+  --spacing-base: clamp(1rem, 2vw, 1.5rem);
+  --spacing-large: clamp(1.5rem, 3vw, 2.5rem);
+  --card-radius: 20px;
+  --container-max: 1440px;
+}
+
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
-  color: #6c727f;
-  font-weight: 400;
 }
 
 body {
-  font-family: "Be Vietnam Pro", sans-serif;
+  font-family: var(--font-base);
+  font-size: clamp(14px, 1vw + 13px, 16px);
+  color: var(--color-text);
+  font-weight: 400;
   text-align: center;
 }
 
+/* Layout */
 main {
   display: inline-block;
   margin: 0 auto;
   text-align: left;
+  width: 100%;
 }
 
 .container {
-  max-width: 1440px;
-  margin: 2.5rem 1.5rem;
+  max-width: var(--container-max);
+  margin: var(--spacing-large) auto;
+  padding-inline: var(--spacing-base);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Header styles */
 header {
-  margin-bottom: 2.5rem;
+  margin-bottom: var(--spacing-large);
   text-align: center;
   max-width: 612px;
 }
 
 header img {
-  width: 32px;
+  width: clamp(24px, 4vw, 32px);
   height: auto;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
-  color: #000;
-  margin-block: 1rem;
+  color: var(--color-heading);
+  margin-block: clamp(0.75rem, 2vw, 1rem);
 }
 
+/* Grid layout */
 .grid {
   width: 100%;
-  background-color: #f3f4f6;
-  padding: 1.5rem;
-  border-radius: 20px;
+  background-color: var(--color-background);
+  padding: var(--spacing-base);
+  border-radius: var(--card-radius);
   display: grid;
-  gap: 1.5rem;
+  gap: var(--spacing-base);
   justify-content: center;
   align-items: center;
 }
 
+/* Card styles */
 .card {
   display: flex;
-  box-shadow: 0 3px 2px 2px #d9d9da;
-  border-radius: 20px;
+  box-shadow: 0 3px 2px 2px var(--color-shadow);
+  border-radius: var(--card-radius);
   width: 100%;
   height: auto;
-  padding: 2rem;
-  gap: 1rem;
+  padding: clamp(1.5rem, 4vw, 2rem);
+  gap: clamp(0.75rem, 2vw, 1rem);
   background-color: white;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
 
 .card img {
-  max-width: 275px;
+  max-width: min(275px, 100%);
   height: auto;
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
   font-weight: 600;
-  color: #000;
-  margin-bottom: 0.75rem;
+  color: var(--color-heading);
+  margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
 }
 
+/* Responsive layouts */
 @media (max-width: 640px) {
   main {
     display: block;
@@ -88,15 +113,11 @@ h3 {
   .card {
     flex-direction: column;
   }
-
-  .card img {
-    max-width: 100%;
-  }
 }
 
 @media (min-width: 1024px) {
   .grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .card:nth-child(1),
@@ -124,6 +145,7 @@ h3 {
     height: 100%;
     grid-column: span 2;
   }
+
   .card:nth-child(n + 4) {
     grid-column: span 3;
   }

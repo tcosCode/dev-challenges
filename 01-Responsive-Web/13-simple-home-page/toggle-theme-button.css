@@ -1,69 +1,76 @@
+/* Desktop toggle theme styles */
 @media (min-width: 768px) {
+  /* Toggle container desktop */
   #toggle-theme {
     display: flex;
     align-items: center;
     cursor: pointer;
   }
 
-  .moon {
-    z-index: 1;
-  }
-
-  .moon path {
-    fill: white;
-    transition: 0.4s;
-  }
-
-  .sun {
-    z-index: 1;
-  }
-
-  .sun circle,
-  .sun path {
-    fill: #223344;
-    stroke: #223344;
-    transition: 0.4s;
-  }
-
-  .button-theme {
-    display: flex;
-    align-items: center;
-    width: 38px;
-    height: 19px;
-    background-color: #223344;
-    color: white;
-    border-radius: 15px;
-    cursor: pointer;
-    position: relative;
-  }
-
-  .button-theme::before {
-    position: absolute;
-    content: "";
-    background-color: white;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    margin: 2px;
-    transition: 0.4s;
-    right: 0;
-  }
-
+  /* Hide checkbox */
   #toggle-checkbox {
     display: none;
   }
 
+  /* Toggle button styling */
+  #toggle-theme .button-theme {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    background-color: var(--toggle-dark);
+    border-radius: calc(var(--toggle-height) / 2 + var(--toggle-circle-margin));
+    cursor: pointer;
+  }
+
+  /* Toggle circle */
+  #toggle-theme .button-theme::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: var(--toggle-circle-size);
+    height: var(--toggle-circle-size);
+    background-color: var(--toggle-light);
+    border-radius: 50%;
+    margin: var(--toggle-circle-margin);
+    transition: transform var(--toggle-transition);
+  }
+
+  /* Moon icon */
+  #toggle-theme .moon {
+    z-index: 1;
+  }
+
+  #toggle-theme .moon path {
+    fill: var(--toggle-light);
+    transition: fill var(--toggle-transition);
+  }
+
+  /* Sun icon */
+  #toggle-theme .sun {
+    z-index: 1;
+  }
+
+  #toggle-theme .sun circle,
+  #toggle-theme .sun path {
+    fill: var(--toggle-dark);
+    stroke: var(--toggle-dark);
+    transition: fill var(--toggle-transition), stroke var(--toggle-transition);
+  }
+
+  /* Checked states */
   #toggle-checkbox:checked + .button-theme::before {
-    transform: translateX(-17px);
+    transform: translateX(var(--toggle-translate));
   }
 
   #toggle-checkbox:checked + .button-theme .moon path {
-    fill: #223344;
+    fill: var(--toggle-dark);
   }
 
   #toggle-checkbox:checked + .button-theme .sun path,
   #toggle-checkbox:checked + .button-theme .sun circle {
-    fill: white;
-    stroke: white;
+    fill: var(--toggle-light);
+    stroke: var(--toggle-light);
   }
 }

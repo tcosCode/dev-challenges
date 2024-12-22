@@ -1,42 +1,136 @@
+:root {
+  /* Light theme colors */
+  --color-bg-primary: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-text-muted: #4a4a4a;
+  --color-hover: #333333;
+
+  /* Transition values */
+  --transition-duration: 0.5s;
+  --transition-timing: ease;
+  --theme-transition: background-color var(--transition-duration)
+      var(--transition-timing),
+    color var(--transition-duration) var(--transition-timing),
+    border-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Base styles */
 body {
   color-scheme: light dark;
-  transition: background-color 0.5s, color 0.5s;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: var(--theme-transition);
 }
 
+/* Typography base styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  color: inherit;
+  transition: var(--theme-transition);
+}
+
+/* Light mode styles */
 body.light-mode {
-  background-color: white;
-  color: black;
+  --color-bg-primary: #ffffff;
+  --color-text-primary: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-text-muted: #4a4a4a;
+  --color-hover: #333333;
 }
 
+body.light-mode .title h1,
+body.light-mode .title h5 {
+  color: var(--color-text-primary);
+}
+
+body.light-mode h4,
+body.light-mode .done p {
+  color: var(--color-text-muted);
+}
+
+body.light-mode nav ul li a:hover,
+body.light-mode nav ul li a:focus,
+body.light-mode .menu-hamburguer a:hover,
+body.light-mode .menu-hamburguer a:focus {
+  color: var(--color-hover);
+}
+
+body.light-mode .menu-hamburguer {
+  background-color: var(--color-bg-primary);
+}
+
+/* Dark mode styles */
 body.dark-mode {
-  background-color: #000000;
-  color: #ffffff;
+  --color-bg-primary: #000000;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #ffffff;
+  --color-text-muted: #677489;
+  --color-hover: #ffffff;
+}
 
-  .title h1 {
-    color: white;
+body.dark-mode .title h1,
+body.dark-mode .title h5 {
+  color: var(--color-text-primary);
+}
+
+body.dark-mode h4,
+body.dark-mode .done p {
+  color: var(--color-text-muted);
+}
+
+body.dark-mode nav ul li a:hover,
+body.dark-mode nav ul li a:focus,
+body.dark-mode .menu-hamburguer a:hover,
+body.dark-mode .menu-hamburguer a:focus {
+  color: var(--color-hover);
+}
+
+body.dark-mode .menu-hamburguer {
+  background-color: var(--color-bg-primary);
+}
+
+/* System theme preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-primary: #000000;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #ffffff;
+    --color-text-muted: #677489;
+    --color-hover: #ffffff;
   }
 
+  .title h1,
   .title h5 {
-    color: white;
+    color: var(--color-text-primary);
   }
 
-  h4 {
-    color: #677489;
-  }
-
+  h4,
   .done p {
-    color: #677489;
+    color: var(--color-text-muted);
   }
 
-  nav ul li a:hover {
-    color: white;
+  nav ul li a:hover,
+  nav ul li a:focus,
+  .menu-hamburguer a:hover,
+  .menu-hamburguer a:focus {
+    color: var(--color-hover);
   }
 
   .menu-hamburguer {
-    background-color: #000000;
+    background-color: var(--color-bg-primary);
   }
+}
 
-  .menu-hamburguer a:hover {
-    color: white;
+/* High contrast support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-muted: var(--color-text-primary);
   }
 }
