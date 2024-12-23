@@ -65,10 +65,6 @@ p {
   text-wrap: pretty;
 }
 
-h1 {
-  text-wrap: balance;
-}
-
 /* Color utility classes */
 .purple {
   color: var(--color-purple);
