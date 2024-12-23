@@ -28,7 +28,7 @@
 }
 
 /* Toggle button base */
-.button-theme {
+#toggle-theme-hamburguer .button-theme-hamburguer {
   position: relative;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
 }
 
 /* Toggle circle */
-.button-theme::before {
+#toggle-theme-hamburguer .button-theme-hamburguer::before {
   content: "";
   position: absolute;
   right: 0;
@@ -53,12 +53,17 @@
 }
 
 /* Icons */
-.moon path {
+
+#toggle-theme-hamburguer .moon {
+  z-index: 1;
+}
+
+.button-theme-hamburguer .moon path {
   fill: var(--toggle-light);
   transition: fill var(--toggle-transition);
 }
 
-.sun {
+#toggle-theme-hamburguer .sun {
   z-index: 1;
 }
 
@@ -70,16 +75,16 @@
 }
 
 /* Checked state */
-#toggle-checkbox-hamburguer:checked + .button-theme::before {
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer::before {
   transform: translateX(var(--toggle-translate));
 }
 
-#toggle-checkbox-hamburguer:checked + .button-theme .moon path {
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer .moon path {
   fill: var(--toggle-dark);
 }
 
-#toggle-checkbox-hamburguer:checked + .button-theme .sun path,
-#toggle-checkbox-hamburguer:checked + .button-theme .sun circle {
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer .sun path,
+#toggle-checkbox-hamburguer:checked + .button-theme-hamburguer .sun circle {
   fill: var(--toggle-light);
   stroke: var(--toggle-light);
 }

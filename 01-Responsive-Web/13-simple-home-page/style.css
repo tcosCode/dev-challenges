@@ -18,7 +18,7 @@
   --font-size-base: 16px;
   --font-size-md: 18px;
   --font-size-lg: clamp(2rem, 5vw, 4rem);
-  --font-size-menu: 3rem;
+  --font-size-menu: clamp(1.5rem, 5vw, 3rem);
 
   /* Spacing */
   --space-xs: 0.5rem;

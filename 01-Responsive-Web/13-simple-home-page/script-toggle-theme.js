@@ -1,76 +1,55 @@
 /**
  * Theme Toggle Controller
- * This module handles theme switching (dark/light mode) using a toggle button.
- * It saves the user's preference in localStorage and applies it on page load.
+ * Handles theme switching (dark/light mode) and saves user preferences in localStorage.
  */
 
-// Get DOM elements for theme toggle
-const body = document.body; // The document body to apply theme classes
-const checkbox = document.getElementById("toggle-checkbox"); // Checkbox for theme toggle state
-const toggleTheme = document.getElementById("toggle-theme"); // Button to toggle the theme
+// DOM elements for theme toggle
+const body = document.body;
+const checkbox = document.getElementById("toggle-checkbox");
+const toggleTheme = document.getElementById("toggle-theme");
 
 /**
- * Handles theme switching between dark and light modes.
- * Toggles the theme class on the body element and saves the preference in localStorage.
- *
- * @param {Event} e - The click event from the toggle button.
- * @param {HTMLInputElement} checkbox - The checkbox representing theme state.
- * @param {HTMLElement} body - The document body element to apply the theme.
+ * Toggles between dark and light themes.
+ * Updates the body class and saves the preference in localStorage.
  */
-function handleToggleTheme(e, checkbox, body) {
-  e.preventDefault(); // Prevent default button behavior
-  checkbox.checked = !checkbox.checked; // Toggle the checkbox state
-  if (checkbox.checked) {
-    body.classList.replace("light-mode", "dark-mode"); // Switch to dark mode
-    localStorage.setItem("theme", "dark"); // Save preference
-  } else {
-    body.classList.replace("dark-mode", "light-mode"); // Switch to light mode
-    localStorage.setItem("theme", "light"); // Save preference
-  }
+function toggleThemeHandler(e, checkbox) {
+  e.preventDefault();
+  checkbox.checked = !checkbox.checked;
+  const theme = checkbox.checked ? "dark" : "light";
+  body.className = `${theme}-mode`; // Simplified class replacement
+  localStorage.setItem("theme", theme);
 }
 
 /**
  * Applies the saved theme preference on page load.
- * Adds the appropriate class to the body and sets the checkbox state.
- *
- * @param {HTMLInputElement} checkbox - The checkbox representing theme state.
- * @param {HTMLElement} body - The document body element to apply the theme.
  */
-function applySavedTheme(checkbox, body) {
-  const savedTheme = localStorage.getItem("theme") || "light"; // Default to light mode
-  body.classList.add(savedTheme + "-mode"); // Apply the saved theme class
-  checkbox.checked = savedTheme === "dark"; // Set checkbox state
+function applySavedTheme(checkbox) {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  body.className = `${savedTheme}-mode`;
+  checkbox.checked = savedTheme === "dark";
 }
 
-// Add event listener to toggle theme on button click
-toggleTheme.addEventListener("click", (e) =>
-  handleToggleTheme(e, checkbox, body)
-);
-
-// Apply saved theme when the page loads
-window.addEventListener("load", () => applySavedTheme(checkbox, body));
+// Event listeners
+toggleTheme.addEventListener("click", (e) => toggleThemeHandler(e, checkbox));
+window.addEventListener("load", () => applySavedTheme(checkbox));
 
 /////////////////////////////////////////////
 
 /**
- * Hamburger Menu Theme Toggle Controller
- * Extends theme switching functionality to a hamburger menu toggle button.
+ * Hamburger Menu Theme Toggle
+ * Extends theme switching functionality to the hamburger menu.
  */
 
-// Get DOM elements for the hamburger menu theme toggle
+// DOM elements for hamburger menu theme toggle
 const checkboxHamburguer = document.getElementById(
   "toggle-checkbox-hamburguer"
-); // Checkbox for theme state in hamburger menu
+);
 const toggleThemeHamburguer = document.getElementById(
   "toggle-theme-hamburguer"
-); // Button in the hamburger menu to toggle theme
+);
 
-// Add event listener to toggle theme via hamburger menu button
+// Event listeners for hamburger menu
 toggleThemeHamburguer.addEventListener("click", (e) =>
-  handleToggleTheme(e, checkboxHamburguer, body)
+  toggleThemeHandler(e, checkboxHamburguer)
 );
-
-// Apply saved theme for hamburger menu when the page loads
-window.addEventListener("load", () =>
-  applySavedTheme(checkboxHamburguer, body)
-);
+window.addEventListener("load", () => applySavedTheme(checkboxHamburguer));
