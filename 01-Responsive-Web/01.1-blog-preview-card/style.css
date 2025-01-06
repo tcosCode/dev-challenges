@@ -91,19 +91,19 @@ main {
 
 .container .badge p {
   color: var(--gray-950);
-  font-size: var(--text-preset-3);
+  font-size: clamp(12px, 4vw, var(--text-preset-3));
   font-weight: 800;
 }
 
 .time {
   margin-block: var(--150);
   color: var(--gray-950);
-  font-size: var(--text-preset-3);
+  font-size: clamp(12px, 4vw, var(--text-preset-3));
   font-weight: 500;
 }
 
 .container h1 {
-  font-size: var(--text-preset-1);
+  font-size: clamp(20px, 5vw, var(--text-preset-1));
   font-weight: 800;
   margin-bottom: var(--150);
   transition: color 0.3s ease-in-out;
@@ -114,7 +114,7 @@ main {
 }
 
 .paragraph {
-  font-size: var(--text-preset-2);
+  font-size: clamp(14px, 4vw, var(--text-preset-2));
   color: var(--gray-500);
   font-weight: 500;
 }
