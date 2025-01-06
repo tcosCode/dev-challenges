@@ -1,0 +1,137 @@
+/* Variables */
+
+:root {
+  /* Colors */
+  --yellow: #f4d04e;
+  --gray-950: #111111;
+  --gray-500: #6b6b6b;
+
+  /* Spacing */
+  --200: 24px;
+  --150: 12px;
+  --100: 8px;
+  --50: 4px;
+
+  /* Font */
+  --text-preset-1: 24px;
+  --text-preset-2: 16px;
+  --text-preset-3: 14px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: "Figtree", serif;
+  font-size: var(--text-preset-2);
+  font-weight: 400;
+  background-color: var(--yellow);
+}
+
+.title {
+  text-wrap: balance;
+  line-height: 1.5;
+}
+
+p {
+  text-wrap: pretty;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Local Styles */
+
+main {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: var(--200);
+  background-color: white;
+  max-width: 384px;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid var(--gray-950);
+  box-shadow: 8px 8px 0 0 black;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.container .info {
+  margin-block: var(--200);
+}
+
+.container .badge {
+  background-color: var(--yellow);
+  width: min-content;
+  padding: var(--50) var(--150);
+  border-radius: 4px;
+}
+
+.container .badge p {
+  color: var(--gray-950);
+  font-size: var(--text-preset-3);
+  font-weight: 800;
+}
+
+.time {
+  margin-block: var(--150);
+  color: var(--gray-950);
+  font-size: var(--text-preset-3);
+  font-weight: 500;
+}
+
+.container h1 {
+  font-size: var(--text-preset-1);
+  font-weight: 800;
+  margin-bottom: var(--150);
+  transition: color 0.3s ease-in-out;
+}
+
+.container h1:hover {
+  color: var(--yellow);
+}
+
+.paragraph {
+  font-size: var(--text-preset-2);
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.container .author {
+  display: flex;
+  align-items: center;
+  gap: var(--100);
+}
+
+.container .author img {
+  width: 32px;
+  height: 32px;
+}
+
+.container .author p {
+  font-size: var(--text-preset-3);
+  color: var(--gray-950);
+  font-weight: 800;
+}
