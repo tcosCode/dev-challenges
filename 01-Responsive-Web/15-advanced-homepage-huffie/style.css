@@ -9,14 +9,388 @@ html {
   text-wrap: pretty;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   font-family: "Sora", sans-serif;
   font-weight: 400;
   color: #121826;
+  background-color: #fff;
   line-height: 1.5;
 }
 
-.container {
-  max-width: 1280px;
+/* Grid Layout */
+.content-grid {
+  --padding-inline: 2rem;
+  --content-max-width: 1200px;
+  --breakout-max-width: 1280px;
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 2
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(
+      100% - (var(--padding-inline) * 2),
+      var(--content-max-width)
+    )
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width, .hero-breakout),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+}
+
+.hero-breakout {
+  grid-column: breakout-start / full-width-end;
+}
+/* End of the Grid Layout */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.button-grey {
+  color: #737f8b;
+  font-weight: 600;
+}
+
+.button-green {
+  background-color: #5db082;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-green:hover {
+  background-color: #4b9b73;
+}
+
+.login .button-green {
+  margin-left: 1.5rem;
+}
+
+.bg-blue {
+  background-color: #6281f7;
+}
+
+.bg-yellow {
+  background-color: #f5c044;
+}
+
+.bg-green {
+  background-color: #5db082;
+}
+
+.bg-violet {
+  background-color: #6d4ae5;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.5rem 6rem;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Section Hero */
+
+.hero {
+  margin-bottom: 7.75rem;
+}
+
+.hero-version {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+  background-color: #6281f730;
+  max-width: max-content;
+  padding: 0.2rem 2rem 0.2rem 0.2rem;
+  border-radius: 1.8rem;
+}
+
+.hero-version img {
+  background-color: #6281f7;
+  padding: 0.6rem;
+  border-radius: 50%;
+}
+
+.hero-version p {
+  color: #6281f7;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  line-height: 1.3;
+  margin-block: 2rem;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  color: #737f8b;
+  margin-bottom: 5.125rem;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.25rem;
+}
+
+.hero-buttons .button-green {
+  padding: 1rem 2.25rem;
+}
+
+.hero-image {
+  display: none;
+}
+
+/* Section creative-process */
+
+.creative-process {
+  background-color: #3c4c98;
+  padding-block: 6rem;
+  text-align: center;
+}
+
+.creative-process h2,
+.creative-process h4 {
+  color: white;
+}
+
+.creative-process p {
+  color: #c9d0da;
+}
+
+.creative-process-header {
+  margin-block: 0 4.5rem;
+}
+
+.creative-process-header h2 {
+  max-width: 350px;
+  margin: 0 auto 1rem;
+}
+
+.creative-process-header p {
+  font-size: 1.25rem;
+  color: #737f8b;
+}
+
+.creative-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 4rem;
+  place-items: center;
+}
+
+.card {
+  max-width: 350px;
+}
+
+.card p:first-child {
+  font-size: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: max-content;
   margin: 0 auto;
+}
+
+.card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-block: 2rem;
+  margin-inline: auto;
+  max-width: 200px;
+}
+
+/* Section Components */
+.components {
+  padding-block: 6rem;
+}
+
+.components-card {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.components .components-card:last-child {
+  margin-bottom: 0;
+}
+
+.components-card img {
+  max-width: clamp(150px, 70%, 400px);
+  height: auto;
+  align-self: center;
+  object-fit: contain;
+}
+
+.components-text {
+  max-width: clamp(200px, 70%, 400px);
+}
+
+.components-text p:first-child {
+  font-size: 1.5rem;
+  padding: 0.75rem;
+  width: fit-content;
+  border-radius: 50%;
+}
+
+.components-text h2 {
+  /*   font-size: clamp(2.75rem, 5vw, 4rem);
+ */
+  margin-block: 1.5rem;
+}
+
+.components-text p,
+.components-text li {
+  color: #737f8b;
+}
+
+.components-text ul {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.components-text li::before {
+  content: url("./images/Done_ring_round_fill.svg");
+  margin-right: 0.75rem;
+  vertical-align: middle;
+}
+
+.components-text ul li {
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  padding-block: 6rem;
+  background-color: #3c4c98;
+}
+
+.footer-text-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+  margin-bottom: 2.25rem;
+}
+
+.footer-text-wrapper nav {
+  display: flex;
+  gap: 4rem;
+  font-size: 18px;
+  color: white;
+}
+
+.footer-text-wrapper li {
+  margin-bottom: 1.5rem;
+}
+
+.footer-text-wrapper li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-title {
+  font-size: clamp(2rem, 5vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #f6f7fb;
+  max-width: 600px;
+}
+
+.footer-title span {
+  color: #5db082;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+  .hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+  }
+
+  .hero-image {
+    display: block;
+  }
+
+  .creative-process {
+    margin-top: -19rem;
+    background-image: url("./images/section_bg_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .components .components-card:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+
+  .components-card {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .footer-text-wrapper {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content-grid {
+    --padding-inline: 3rem;
+  }
+
+  .creative-process {
+    background-image: url("./images/section_bg_1.png");
+  }
 }

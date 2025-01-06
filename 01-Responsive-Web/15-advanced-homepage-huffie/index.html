@@ -13,31 +13,32 @@
     <title>Advanced Homepage - Huffie</title>
   </head>
   <body>
-    <header>
-      <img src="./images/logo.svg" alt="logo" />
-      <div class="login">
-        <a href="#">Login</a>
-        <a href="#">Sign Up</a>
+    <div class="content-grid">
+      <div class="header breakout">
+        <img src="./images/logo.svg" alt="logo" />
+        <div class="login">
+          <a href="#" class="button-grey">Login</a>
+          <a href="#" class="button-green">Sign Up</a>
+        </div>
       </div>
-    </header>
-    <main>
-      <section class="hero">
-        <div class="hero-content">
+      <section class="hero hero-breakout">
+        <article class="hero-content">
           <div class="hero-version">
+            <img src="./images/drop.svg" alt="drop" />
             <p>version 4.0.1</p>
           </div>
           <div class="hero-text">
             <h1>Where data and creativity come together.</h1>
             <p>
-              The fastest way to build and deploy websites with resusable
+              The fastest way to build and deploy websites with reusable
               components.
             </p>
           </div>
           <div class="hero-buttons">
-            <a href="#">Get Started</a>
-            <a href="#">View Demo</a>
+            <a href="#" class="button-green uppercase">Get Started</a>
+            <a href="#" class="button-grey uppercase">View Demo</a>
           </div>
-        </div>
+        </article>
         <div class="hero-image">
           <img
             src="./images/hero-image@2x.png"
@@ -46,53 +47,51 @@
           />
         </div>
       </section>
-      <section class="creative-process">
+      <section class="creative-process full-width content-grid">
         <div class="creative-process-header">
           <h2>This is new creative process</h2>
           <p>Quisque eleifend velit vel erat fringilla interdum</p>
         </div>
         <div class="creative-process-grid">
-          <card class="card-blue">
-            <p>paint</p>
+          <article class="card">
+            <p class="bg-blue">🎨</p>
             <h4>200+ cloneable components</h4>
             <p>
               Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam.
               Proin vulputate nisl vel sem consequat euismod.
             </p>
-          </card>
-          <card class="card-yellow">
-            <p>diana</p>
+          </article>
+          <article class="card">
+            <p class="bg-yellow">🎯</p>
             <h4>Complete style guild for projects</h4>
             <p>
               Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam.
               Proin vulputate nisl vel sem consequat euismod.
-            </p> </card
-          ><card class="card-green">
-            <p>flower</p>
+            </p>
+          </article>
+          <article class="card">
+            <p class="bg-green">🌸</p>
             <h4>Modern & beautiful landing page</h4>
             <p>
               Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam.
               Proin vulputate nisl vel sem consequat euismod.
-            </p> </card
-          ><card class="card-violet">
-            <p>⚙️</p>
+            </p>
+          </article>
+          <article class="card">
+            <p class="bg-violet">⚙️</p>
             <h4>Built in multiple ways</h4>
             <p>
               Suspendisse id tortor venenatis, blandit lacus ut, efficitur diam.
               Proin vulputate nisl vel sem consequat euismod.
             </p>
-          </card>
+          </article>
         </div>
       </section>
-      <section class="components">
-        <article class="cloneable-components">
-          <img
-            src="./images/section-1@2x.png"
-            srcset="./images/section-1@2x.png 1x, ./images/section-1@2x.png 2x"
-            alt="cloneable-components"
-          />
-          <div class="cloneable-components-text">
-            <p>paint</p>
+      <section class="components content">
+        <article class="components-card">
+          <img src="./images/section-1.png" alt="cloneable-components" />
+          <div class="components-text">
+            <p class="bg-blue">🎨</p>
             <h2>200+ cloneable components</h2>
             <p>
               From navigation bars to modals, buttons to forms, our library has
@@ -105,14 +104,10 @@
             </ul>
           </div>
         </article>
-        <article class="style-projects">
-          <img
-            src="./images/section-2@2x.png"
-            srcset="./images/section-2@2x.png 1x, ./images/section-2@2x.png 2x"
-            alt="style-projects"
-          />
-          <div class="style-projects-text">
-            <p>diana</p>
+        <article class="components-card">
+          <img src="./images/section-2.png" alt="style-projects" />
+          <div class="components-text">
+            <p class="bg-yellow">🎯</p>
             <h2>Complete style guild for projects</h2>
             <p>
               A comprehensive style guide can make all the difference in
@@ -125,14 +120,10 @@
             </ul>
           </div>
         </article>
-        <article class="built">
-          <img
-            src="./images/section-3@2x.png"
-            srcset="./images/section-3@2x.png 1x, ./images/section-3@2x.png 2x"
-            alt="built"
-          />
-          <div class="built-text">
-            <p>⚙️</p>
+        <article class="components-card">
+          <img src="./images/section-3.png" alt="built" />
+          <div class="components-text">
+            <p class="bg-violet">⚙️</p>
             <h2>Built in multiple ways</h2>
             <p>
               Our approach to content creation allows you to build your content
@@ -146,25 +137,31 @@
           </div>
         </article>
       </section>
-    </main>
-    <footer>
-      <h3>Always with the legendary customer <span>experience.</span></h3>
-      <nav>
-        <ul>
-          <li><a href="#">Overview</a></li>
-          <li><a href="#">Glossary</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Style Guide</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Colours</a></li>
-          <li><a href="#">Typography</a></li>
-          <li><a href="#">Shadow</a></li>
-          <li><a href="#">Avatar</a></li>
-          <li><a href="#">Buttons</a></li>
-        </ul>
-      </nav>
-      <img src="./images/full-logo.svg" alt="full-logo" />
-    </footer>
+      <footer class="full-width content-grid">
+        <div class="breakout">
+          <div class="footer-text-wrapper">
+            <h3 class="footer-title">
+              Always with the legendary customer <span>experience.</span>
+            </h3>
+            <nav>
+              <ul>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Glossary</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Style Guide</a></li>
+              </ul>
+              <ul>
+                <li><a href="#">Colours</a></li>
+                <li><a href="#">Typography</a></li>
+                <li><a href="#">Shadow</a></li>
+                <li><a href="#">Avatar</a></li>
+                <li><a href="#">Buttons</a></li>
+              </ul>
+            </nav>
+          </div>
+          <img src="./images/full-logo.svg" alt="full-logo" />
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
